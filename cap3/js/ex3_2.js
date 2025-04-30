@@ -25,3 +25,16 @@ function calcularPeso() {
     // Exibe o resultado
     outResposta.textContent = nome + ": Seu peso ideal é " + peso.toFixed(3) + " kg";
 }
+
+function limparCampos() {
+    // Limpa os conteúdos dos elementos
+    document.getElementById("inNome").value = "";
+    document.getElementById("rbMasculino").checked = false;
+    document.getElementById("rbFeminino").checked = false;
+    document.getElementById("inAltura").value = "";
+    document.getElementById("outResposta").textContent = "";
+    // posiciona (joga o foco) no elemento inNome
+    document.getElementById("inNome").focus();
+}
+var btLimpar = document.getElementById("btLimpar");
+btLimpar.addEventListener("click", limparCampos);
