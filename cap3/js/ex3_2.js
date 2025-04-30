@@ -38,3 +38,14 @@ function limparCampos() {
 }
 var btLimpar = document.getElementById("btLimpar");
 btLimpar.addEventListener("click", limparCampos);
+
+//         Um outro método que reinicia toda a página
+
+// function limparCampos() {
+//     // recarrega a página
+//     location.reload();
+//     // posiciona (joga o foco) no elemento inNome
+//     document.getElementById("inNome").focus();
+//     }
+//     var btLimpar = document.getElementById("btLimpar");
+//     btLimpar.addEventListener("click", limparCampos);
