@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Viagem</title>
+  <style>
+    body {
+      background-color: #1e3c50;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      color: #00ffc8;
+    }
+
+    section {
+      background-color: #2a5d75;
+      width: 320px;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffc888;
+    }
+
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="button"] {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #00ffc8;
+      color: #1e3c50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Viagem</h1>
+  <section>
+    <p>Quantos litros de combustível você tem?</p>
+    <input type="number" id="litrosInput" step="0.1" placeholder="Ex: 20">
+    <br>
+    <input type="button" value="Calcular" onclick="calcularViagem()">
+    <h3 id="resultado"></h3>
+  </section>
+
+  <script>
+    function calcularViagem() {
+      const litros = parseFloat(document.getElementById("litrosInput").value);
+      const res = document.getElementById("resultado");
+
+      if (isNaN(litros) || litros <= 0) {
+        alert("Por favor, insira um valor válido.");
+        return;
+      }
+
+      const consumoKmPorLitro = 12;
+      const velocidadeMedia = 80;
+
+      const distancia = litros * consumoKmPorLitro;
+      const tempoHoras = distancia / velocidadeMedia;
+
+      res.innerHTML = `Com ${litros}L, você pode rodar <strong>${distancia.toFixed(1)} km</strong><br>
+      Tempo estimado de viagem: <strong>${tempoHoras.toFixed(1)} horas</strong>`;
+    }
+  </script>
+</body>
+</html>
