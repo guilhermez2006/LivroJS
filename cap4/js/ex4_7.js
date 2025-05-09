@@ -1,6 +1,5 @@
 var outEspacos = document.getElementById("outEspacos");
 var arrayDeNumeros = [];
-var transfomarEmSimbolos = arrayDeNumeros;
 
 function preencherEspacos() {
     let inNumero = parseInt(document.getElementById("inNumero").value);
