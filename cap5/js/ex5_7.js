@@ -33,18 +33,15 @@ class Turma {
 
     removerAluno() {
         const alunoRemover = prompt("Qual aluno deseja remover da turma?");
-        let encontrado = false;
+        const tamanhoAntes = this.alunos.length;
 
-        for (let i = 0; i < this.alunos.length; i++) {
-            if (this.alunos[i].nome === alunoRemover) {
-                this.alunos.splice(i, 1);
-                alert(`O aluno ${alunoRemover} foi removido da turma!`);
-                encontrado = true;
-                break;
-            }
-        }
+        this.alunos = this.alunos.filter(aluno => aluno.nome !== alunoRemover);
 
-        if (!encontrado) {
+        const tamanhoDepois = this.alunos.length;
+
+        if (tamanhoDepois < tamanhoAntes) {
+            alert(`O aluno ${alunoRemover} foi removido da turma!`);
+        } else {
             alert(`O aluno ${alunoRemover} não está na turma!`);
         }
     }
